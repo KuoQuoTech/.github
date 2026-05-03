@@ -40,6 +40,9 @@ jobs:
           echo "Copying KuoQuo-Pivot into site/pivot..."
           mkdir -p site/pivot
           cp -r KuoQuo-Pivot/* site/pivot/ || true
+          
+          echo "Copying .gitmodules to site root..."
+          cp .gitmodules site/ || true
 
       # 6. Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
