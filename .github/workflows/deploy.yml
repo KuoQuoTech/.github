@@ -1,4 +1,4 @@
-name: Deploy Docs to gh-pages
+name: Deploy KuoQuo Docs Website
 
 on:
   push:
@@ -30,16 +30,16 @@ jobs:
       - name: Install Zensical
         run: pip install zensical
 
-      # 4. Inject submodule into docs (if needed)
-      - name: Prepare submodules
-        run: |
-          echo "Copying KuoQuo-Pivot into docs..."
-          mkdir -p docs/KuoQuo-Pivot
-          cp -r KuoQuo-Pivot/* docs/KuoQuo-Pivot/ || true
-
-      # 5. Build site
+      # 4. Build site
       - name: Build site
         run: zensical build --clean
+
+      # 5. Inject submodule into built site (moved here)
+      - name: Prepare submodules
+        run: |
+          echo "Copying KuoQuo-Pivot into site/pivot..."
+          mkdir -p site/pivot
+          cp -r KuoQuo-Pivot/* site/pivot/ || true
 
       # 6. Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
