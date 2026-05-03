@@ -37,9 +37,9 @@ jobs:
       # 5. Inject submodule into built site (moved here)
       - name: Prepare submodules
         run: |
-          echo "Copying KuoQuo-Pivot into site/pivot..."
+          echo "Copying pivot into site/pivot..."
           mkdir -p site/pivot
-          cp -r KuoQuo-Pivot/* site/pivot/ || true
+          cp -r pivot/* site/pivot/ || true
           
           echo "Copying .gitmodules to site root..."
           cp .gitmodules site/ || true
