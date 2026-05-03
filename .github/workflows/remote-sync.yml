@@ -1,0 +1,27 @@
+name: Update Pivot Submodule
+
+on:
+  repository_dispatch:
+    types: [update_submodule]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Target Repo
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages # Or your main branch, depending on where the submodule lives
+          submodules: true
+          fetch-depth: 0
+
+      - name: Pull latest submodule state
+        run: |
+          # This updates the submodule to the latest commit on its remote branch
+          git submodule update --remote --recursive pivot
+          
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add pivot
+          git commit -m "chore: update pivot submodule to latest" || echo "No changes"
+          git push
