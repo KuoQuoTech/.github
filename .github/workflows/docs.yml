@@ -13,8 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repo (with submodules)
         uses: actions/checkout@v4
+        with:
+          submodules: recursive   # ✅ THIS is the key fix
+          fetch-depth: 0
 
       - name: Deploy docs folder to gh-pages
         uses: peaceiris/actions-gh-pages@v4
