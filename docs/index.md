@@ -8,12 +8,10 @@ Welcome to the project hub. This page serves as a central entry point to all rel
 
 Choose a project below to explore its documentation, source code, and usage guides.
 
-
 ## 💍 KuoQuo Pivot
 
-!!! info
-    This page is intended as a **routing layer** between multiple repositories.
-    Each project is self-contained but follows shared conventions.
+!!!note "This section is currently under development."
+    We’re actively working on it and will have updates available soon. Thank you for your patience!
 
 - 📦 Repository: https://github.com/KuoQuoTech/KuoQuo-Pivot
 - 📖 Docs: https://docs.kuoquo.com/pivot/
