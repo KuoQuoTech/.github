@@ -1,4 +1,4 @@
 [submodule "KuoQuo-Pivot"]
-	path = pivot
+	path = KuoQuo-Pivot
 	url = https://github.com/KuoQuoTech/KuoQuo-Pivot.git
 	branch = gh-pages
