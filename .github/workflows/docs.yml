@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write   # needed to push to gh-pages
+  contents: write
 
 jobs:
   deploy:
@@ -16,8 +16,14 @@ jobs:
       - name: Checkout repo (with submodules)
         uses: actions/checkout@v4
         with:
-          submodules: recursive   # ✅ THIS is the key fix
+          submodules: recursive
           fetch-depth: 0
+
+      - name: Prepare docs (include submodule)
+        run: |
+          echo "Copying submodule into docs..."
+          mkdir -p docs/KuoQuo-Pivot
+          cp -r KuoQuo-Pivot/* docs/KuoQuo-Pivot/
 
       - name: Deploy docs folder to gh-pages
         uses: peaceiris/actions-gh-pages@v4
