@@ -70,10 +70,6 @@ Copyright &copy; 2026 The authors
 # Dev configs
 dev_addr = "localhost:8080"
 
-# Build configs
-docs_dir = "web"
-site_dir = "docs"
-
 # ----------------------------------------------------------------------------
 # Section for configuring theme options
 # ----------------------------------------------------------------------------

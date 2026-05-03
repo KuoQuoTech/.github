@@ -1,0 +1,50 @@
+name: Deploy Docs to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo + submodules
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      # 2. Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      # 3. Install Zensical
+      - name: Install Zensical
+        run: pip install zensical
+
+      # 4. Inject submodule into docs (if needed)
+      - name: Prepare submodules
+        run: |
+          echo "Copying KuoQuo-Pivot into docs..."
+          mkdir -p docs/KuoQuo-Pivot
+          cp -r KuoQuo-Pivot/* docs/KuoQuo-Pivot/ || true
+
+      # 5. Build site
+      - name: Build site
+        run: zensical build --clean
+
+      # 6. Deploy to gh-pages branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
