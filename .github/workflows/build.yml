@@ -9,22 +9,21 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repo + submodules
+      # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           fetch-depth: 0
 
       # 2. Setup Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.x"
 
       # 3. Install Zensical
       - name: Install Zensical
@@ -34,17 +33,18 @@ jobs:
       - name: Build site
         run: zensical build --clean
 
-      # 5. Inject submodule into built site (moved here)
-      - name: Prepare submodules
+      # 5. Fetch Pivot site (from gh-pages branch)
+      - name: Fetch Pivot site
         run: |
-          echo "Copying pivot into site/pivot..."
-          mkdir -p site/pivot
-          cp -r pivot/* site/pivot/ || true
-          
-          echo "Copying .gitmodules to site root..."
-          cp .gitmodules site/ || true
+          echo "Cloning Pivot gh-pages branch into site/pivot..."
 
-      # 6. Deploy to gh-pages branch
+          rm -rf site/pivot
+          git clone --depth 1 --branch gh-pages https://github.com/KuoQuoTech/KuoQuo-Pivot.git site/pivot
+
+          # Remove git history so it can be deployed cleanly
+          rm -rf site/pivot/.git
+
+      # 6. Deploy to gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
