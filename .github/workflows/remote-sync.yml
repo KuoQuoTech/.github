@@ -1,34 +1,46 @@
-name: Update Pivot Submodule
+name: Update Pivot Content
 
 on:
   repository_dispatch:
     types: [update_submodule]
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    # ADD THESE THREE LINES:
-    permissions:
-      contents: write
-    
+
     steps:
-      - name: Checkout Target Repo
+      # 1. Checkout gh-pages branch
+      - name: Checkout gh-pages
         uses: actions/checkout@v4
         with:
           ref: gh-pages
-          submodules: true
           fetch-depth: 0
-          # This ensures the checkout uses the token with write perms
-          token: ${{ secrets.GITHUB_TOKEN }} 
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Pull latest submodule state
+      # 2. Replace pivot content with latest from remote
+      - name: Update Pivot from remote
         run: |
-          git submodule update --remote --recursive pivot
-          
+          echo "Fetching latest Pivot gh-pages..."
+
+          # Remove old content
+          rm -rf pivot
+
+          # Clone latest Pivot gh-pages
+          git clone --depth 1 --branch gh-pages https://github.com/KuoQuoTech/KuoQuo-Pivot.git pivot
+
+          # Remove git metadata
+          rm -rf pivot/.git
+
+      # 3. Commit & push changes
+      - name: Commit changes
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Add the specific folder and the submodule pointer
+
           git add pivot
-          git commit -m "chore: update pivot submodule to latest" || echo "No changes"
+          git commit -m "chore: sync pivot from upstream gh-pages" || echo "No changes"
+
           git push
