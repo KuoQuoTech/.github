@@ -7,21 +7,28 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    # ADD THESE THREE LINES:
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout Target Repo
         uses: actions/checkout@v4
         with:
-          ref: gh-pages # Or your main branch, depending on where the submodule lives
+          ref: gh-pages
           submodules: true
           fetch-depth: 0
+          # This ensures the checkout uses the token with write perms
+          token: ${{ secrets.GITHUB_TOKEN }} 
 
       - name: Pull latest submodule state
         run: |
-          # This updates the submodule to the latest commit on its remote branch
           git submodule update --remote --recursive pivot
           
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add the specific folder and the submodule pointer
           git add pivot
           git commit -m "chore: update pivot submodule to latest" || echo "No changes"
           git push
