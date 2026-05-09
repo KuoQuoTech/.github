@@ -8,7 +8,7 @@ Welcome to the project hub. This page serves as a central entry point to all rel
 
 Choose a project below to explore its documentation, source code, and usage guides.
 
-## 💍 KuoQuo Pivot
+## KuoQuo Pivot 💍 
 
 !!!note "This section is currently under development."
     We’re actively working on it and will have updates available soon. Thank you for your patience!
