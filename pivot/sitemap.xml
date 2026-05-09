@@ -7,19 +7,13 @@
         <loc>https://docs.kuoquo.com/pivot/GetStarted/DesignRationale.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/GetStarted/CreateYourDevBoard.html</loc>
-      </url>
-      <url>
-        <loc>https://docs.kuoquo.com/pivot/GetStarted/CreateYourSmartRing.html</loc>
-      </url>
-      <url>
         <loc>https://docs.kuoquo.com/pivot/GetStarted/License.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/GetStarted/LicenseGNUGPLv3.html</loc>
+        <loc>https://docs.kuoquo.com/pivot/GetStarted/LicenseCERN-OHL-S-2.0.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/GetStarted/LicenseCERN-OHL-S-2.0.html</loc>
+        <loc>https://docs.kuoquo.com/pivot/GetStarted/LicenseGNUGPLv3.html</loc>
       </url>
       <url>
         <loc>https://docs.kuoquo.com/pivot/GetStarted/LicenseCommercial.html</loc>
@@ -28,12 +22,42 @@
         <loc>https://docs.kuoquo.com/pivot/GetStarted/Notice.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/Hardware/HardwareOverview.html</loc>
+        <loc>https://docs.kuoquo.com/pivot/POC/POC.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/Firmware/FirmwareOverview.html</loc>
+        <loc>https://docs.kuoquo.com/pivot/POC/Hardware/HardwareOverview.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/Software/SoftwareOverview.html</loc>
+        <loc>https://docs.kuoquo.com/pivot/POC/Firmware/FirmwareOverview.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/POC/Software/SoftwareOverview.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/DevBoard/CreateYourDevBoard.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/DevBoard/Hardware/HardwareOverview.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/DevBoard/Firmware/FirmwareOverview.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/DevBoard/Software/SoftwareOverview.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/ProductionRing/CreateYourSmartRing.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/ProductionRing/Hardware/HardwareOverview.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/ProductionRing/Firmware/FirmwareOverview.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/ProductionRing/Software/SoftwareOverview.html</loc>
+      </url>
+      <url>
+        <loc>https://docs.kuoquo.com/pivot/Community/GetInvolved.html</loc>
       </url>
 </urlset>
