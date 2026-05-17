@@ -63,6 +63,8 @@ repo = "fontawesome/brands/git-alt"
 # Dev configs
 dev_addr = "localhost:8080"
 
+edit_uri = "edit/main/docs/"
+
 # ----------------------------------------------------------------------------
 # Section for configuring theme options
 # ----------------------------------------------------------------------------
