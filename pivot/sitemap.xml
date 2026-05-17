@@ -25,13 +25,13 @@
         <loc>https://docs.kuoquo.com/pivot/POC/POC.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/POC/Hardware/HardwareOverview.html</loc>
+        <loc>https://docs.kuoquo.com/pivot/POC/IMU/IMUOverview.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/POC/Firmware/FirmwareOverview.html</loc>
+        <loc>https://docs.kuoquo.com/pivot/POC/IMU/IMUBasic.html</loc>
       </url>
       <url>
-        <loc>https://docs.kuoquo.com/pivot/POC/Software/SoftwareOverview.html</loc>
+        <loc>https://docs.kuoquo.com/pivot/POC/IMU/IMUBasicBle.html</loc>
       </url>
       <url>
         <loc>https://docs.kuoquo.com/pivot/DevBoard/CreateYourDevBoard.html</loc>
