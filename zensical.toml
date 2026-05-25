@@ -38,6 +38,7 @@ Copyright &copy; 2026 KuoQuo
 #
 nav = [
   {"Navigator" = "index.md" },
+  {"Shop" = "https://kuoquo.com/" },
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize
